@@ -20,6 +20,7 @@ function swap(arr, i, j) {
 }
 // console.log(swap([54,46,65,12,6,76,3], 1, 2));
 
+
 /** 
  * Bubble Sort 
  * O(N^2)
@@ -37,6 +38,27 @@ function bubbleSort(arr) {
   return arr;
 }
 // console.log(bubbleSort([54,46,65,12,6,76,3]));
+
+
+/** 
+ * Bubble Sort Optimized
+ * O(N^2)
+ * set swaped is true at the beginning and change it to false when no swap made. 
+ */
+function bubbleSortOptimized(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let noSwaped = true;
+    for (let j = i+1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        swap(arr, i, j);
+        noSwaped = false;
+      }
+    }
+    if (noSwaped) break;
+  }
+  return arr;
+}
+// console.log(bubbleSortOptimized([54,46,65,12,6,76,3]));
 
 
 /**
@@ -60,6 +82,7 @@ function selectionSort(arr) {
   return arr;
 }
 // console.log(selectionSort([54,46,65,12,6,76,3]));
+
 
 /** 
  * Insertion Sort
